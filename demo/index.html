@@ -1,0 +1,42 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Storage</title>
+	<link rel="stylesheet" href="bower_components/bootstrap.css/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/storage.css">
+</head>
+<body>
+	<div class="container">
+		<div class="hero-unit">
+			<h1>storage</h1>
+			<p>Poly fill for local / session storage. Falls back to Cookie in older browsers</p>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<p>Normalises cookie fall back to support storage API methods:</p>
+				<ul>
+					<li>setItem('key','value')</li>
+					<li>getItem('key')</li>
+					<li>removeItem('key')</li>
+				</ul>
+			</div>
+			<h2>Storage types</h2>
+			<p>Defaults to local storage. Can be set to session</p>
+			<p>core.sessionStorage = new Lm_storage('session');</p>
+		</div>
+	</div>
+	<script src="bower_components/jquery/jquery.min.js"></script>
+	<script src="js/storage.js"></script>
+	<script>
+		(function(global,$){
+			global.core = {};
+			global.core.storage = new Lm_storage();
+		})(window,jQuery);
+	</script>
+</body>
+</html>
